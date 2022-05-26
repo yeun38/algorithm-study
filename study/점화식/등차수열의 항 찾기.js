@@ -1,23 +1,10 @@
 function answer(a, d, n) {
   let index;
 
-  //등차수열
-  let num;
-  for (let i = 1; ; i++) {
-    //무한반복을 공백으로 표현
-    num = a + d * (i - 1);
+  if ((n - a) % d === 0) {
+    index = (n - a) / d + 1;
+  } else index = -1;
 
-    if (num > n) {
-      index = -1;
-      break;
-    }
-
-    if (num == n) {
-      index = i;
-      break;
-    }
-    console.log(num);
-  }
   return index;
 }
 
