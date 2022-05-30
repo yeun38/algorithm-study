@@ -1,17 +1,19 @@
 const fs = require("fs");
-const input = fs.readFileSync("/dev/stdin").toString().split(" ");
+const input = fs.readFileSync("input.txt").toString().split(" ");
 let num = parseInt(input[0]);
 
-let i = 2;
 let arr = [];
-while (true) {
+let i = 2;
+
+while (i <= num) {
   if (num % i === 0) {
-    num = num / i;
-    arr.push(i);
-    i = 1;
+    while (num % i === 0) {
+      arr.push(i);
+      num = num / i;
+    }
   }
   i++;
-  if (i > num) {
+  if (num === 1) {
     break;
   }
 }
