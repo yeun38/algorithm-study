@@ -1,10 +1,10 @@
 const input = require("fs")
-  .readFileSync("/dev/stdin")
+  .readFileSync("input.txt")
   .toString()
   .trim()
   .split("\n");
 
-const len = input.shift();
+input.shift();
 
 input.sort((a, b) => a.split(" ")[0] - b.split(" ")[0]);
 
