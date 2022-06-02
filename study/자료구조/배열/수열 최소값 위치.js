@@ -1,6 +1,7 @@
 /* user code */
 function answer(nums) {
   let result = [];
+  let count = 0;
 
   //최소값 찾기
   let min = Number.MAX_SAFE_INTEGER;
@@ -11,7 +12,7 @@ function answer(nums) {
   }
   //최소값의 인덱스위치 찾기 > min값이랑 같을 경우 인덱스반환
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === min) result.push(i);
+    if (nums[i] === min) result[count++] = i;
   }
   return result;
 }
