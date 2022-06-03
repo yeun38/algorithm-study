@@ -1,15 +1,16 @@
 // 이중포문을 이용하여 max값을 찾는데 그 때 i,j값을 저장해놔야겠는데?
 
 /* user code*/
-function answer(arr) {
-  let max = Number.MIN_SAFE_INTEGER;
+function answer(nums) {
   let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] + arr[j] > max) {
-        max = arr[i] + arr[j];
-        result = [arr[i], arr[j]].sort((a, b) => b - a);
-      }
+
+  result = nums[0] > nums[1] ? [nums[0], nums[1]] : [nums[1], nums[0]];
+  for (let i = 2; i < nums.length; i++) {
+    if (nums[i] > result[0]) {
+      result[1] = result[0];
+      result[0] = nums[i];
+    } else if (nums[i] > result[1]) {
+      result[1] = nums[i];
     }
   }
   return result;
