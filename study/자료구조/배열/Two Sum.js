@@ -1,10 +1,13 @@
 function answer(nums, target) {
+  let map = {}; // key, value
+
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (target === nums[i] + nums[j]) {
-        return [i, j];
-      }
+    if (map[target - nums[i]] != undefined) {
+      return [map[target - nums[i]], i];
     }
+
+    map[nums[i]] = i;
+    console.log(map);
   }
 }
 
