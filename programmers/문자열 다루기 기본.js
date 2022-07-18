@@ -1,27 +1,13 @@
 function solution(s) {
   let answer = true;
+  if (s.length !== 4 && s.length !== 6) {
+    answer = false;
+  }
+
   for (let i = 0; i < s.length; i++) {
-    let word = +s[i];
-    console.log(word);
-    console.log(typeof word);
-    if (typeof word !== "number") {
+    if (isNaN(Number(s[i]))) {
       answer = false;
-      break;
-    } else {
-      answer = true;
     }
   }
   return answer;
 }
-
-console.log(solution("a233"));
-
-// function solution(s) {
-//     var answer = true;
-//     let number = Number(s);
-//     if (typeof number === Number) {
-//     } else {
-//       answer = false;
-//     }
-//     return answer;
-//   }
