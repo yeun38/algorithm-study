@@ -1,9 +1,7 @@
-function solution(x) {
-  let sum = 0;
-  let newX = String(x);
-  for (let i = 0; i < newX.length; i++) {
-    sum += Number(newX[i]);
-  }
-  return sum;
+function solution(n) {
+  let arr = n
+    .toString()
+    .split("")
+    .map((x) => parseInt(x));
+  return arr.reduce((acc, cur) => acc + cur, 0);
 }
-// foreach가 어울리는 문제 같다
