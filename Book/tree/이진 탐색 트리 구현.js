@@ -17,7 +17,7 @@ class BST {
       this.root = new Node(key);
     } else {
       let curr = this.root;
-      console.log(curr);
+
       while (true) {
         // 현재 노드의 값보다 작으면, 왼쪽 서브 트리에서 검색
         if (key < curr.val) {
